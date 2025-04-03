@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "595723768044",
+    "project_id": "quillai-7069d",
+    "storage_bucket": "quillai-7069d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595723768044:android:f16d767cfeb7ce9622d5c9",
+        "android_client_info": {
+          "package_name": "com.example.quillai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr8WazZxsIKvCd7Up6-MrhF_8k1wIIKU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
