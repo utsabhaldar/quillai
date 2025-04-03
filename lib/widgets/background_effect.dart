@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quillai/constants/app_style.dart';
 import 'package:quillai/constants/color_constants.dart';
 import 'package:quillai/utils/scaling_utility.dart';
 

@@ -8,9 +8,8 @@ class SplashController extends GetxController {
       CarouselSliderController();
 
   void nextSlide() {
-    if (currentIndex.value < 6) {
+    if (currentIndex.value < 2) {
       carouselController.nextPage(
-        // duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );
       currentIndex.value++;
@@ -20,31 +19,22 @@ class SplashController extends GetxController {
   }
 
   final List<String> images = [
-    'assets/images/image1.png',
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
-    'assets/images/image5.png',
-    'assets/images/image6.png',
+    'assets/images/image7.png',
+    'assets/images/image7.png',
     'assets/images/image7.png',
   ];
   final List<String> titles = [
-    "Splash_head1".tr,
-    "Splash_head2".tr,
-    "Splash_head3".tr,
-    "Splash_head4".tr,
-    "Splash_head5".tr,
-    "Splash_head6".tr,
-    "Splash_head7".tr,
+    "Journal your thoughts".tr,
+    "Meet your companion".tr,
+    "Reflect and prosper".tr,
   ];
   final List<String> subtitle = [
-    "Splash_subhead1".tr,
-    "Splash_subhead2".tr,
-    "Splash_subhead3".tr,
-    "Splash_subhead4".tr,
-    "Splash_subhead5".tr,
-    "Splash_subhead6".tr,
-    "Splash_subhead7".tr,
+    "Write down your thoughts, feelings, and\nexperiences in a private, secure space."
+        .tr,
+    "Quillai understands your feelings and helps\nyou, like a thoughtful companion."
+        .tr,
+    "Use personalized suggestions to improven\nyour mental well-being over time."
+        .tr,
   ];
 
   void skipToSignIn() {

@@ -60,16 +60,12 @@ class SettingsScreen extends GetWidget<SettingsController> {
                           icon: Icons.settings_outlined,
                           title: "General Settings".tr,
                           items: [
-                            // "Language Preference",
-                            'Arabic'.tr,
-                            "English",
+                            "Profile picture".tr,
                           ],
                           scale: scale,
                           onItemTap: (item) {
-                            if (item == "Arabic") {
-                              controller.setLanguage('ara');
-                            } else if (item == "English") {
-                              controller.setLanguage('en');
+                            if (item == "Profile picture".tr) {
+                              Get.toNamed(AppRoutes.profile);
                             }
                           },
                         ),
@@ -77,40 +73,14 @@ class SettingsScreen extends GetWidget<SettingsController> {
                           icon: Icons.dataset_outlined,
                           title: "Privacy Settings".tr,
                           items: [
-                            "Eye".tr,
-                            "Fingerprint".tr,
-                            "Profile picture".tr,
                             "Update password".tr,
                           ],
                           scale: scale,
                           onItemTap: (item) {
-                            if (item == "Eye".tr) {
-                              // Get.toNamed(AppRoutes.captureEyeScreen);
-                            } else if (item == "Profile picture".tr) {
-                              Get.toNamed(AppRoutes.profile);
-                            } else if (item == "Update password".tr) {
+                            if (item == "Update password".tr) {
                               Get.find<SignInController>()
                                   .passwordReset(currentUser!.email);
                             }
-                          },
-                        ),
-                        DropDownOptions(
-                          icon: Icons.candlestick_chart_outlined,
-                          title: "Security Settings".tr,
-                          items: [
-                            "Password Management".tr,
-                            "Biometric Security".tr,
-                            "Device Management".tr,
-                          ],
-                          scale: scale,
-                          onItemTap: (item) {
-                            // if (item == "Password Management".tr) {
-                            //   Get.toNamed(AppRoutes.passwordManagement);
-                            // } else if (item == "Device Management".tr) {
-                            //   Get.toNamed(AppRoutes.deviceManagement);
-                            // } else if (item == "Biometric Security".tr) {
-                            //   Get.toNamed(AppRoutes.biometricManagementScreen);
-                            // }
                           },
                         ),
                         SizedBox(height: scale.getScaledHeight(120)),

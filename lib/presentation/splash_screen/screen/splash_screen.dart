@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:quillai/constants/image_constants.dart';
 import 'package:quillai/presentation/splash_screen/controller/splash_controller.dart';
 import 'package:quillai/utils/scaling_utility.dart';
 import 'package:quillai/widgets/common_network_image.dart';
@@ -35,21 +36,10 @@ class SplashScreen extends GetWidget<SplashController> {
                 return Stack(
                   children: [
                     Positioned.fill(
-                      child: CommonNetworkImageView(
-                        url: controller.images[index],
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    // Black overlay
-                    Positioned.fill(
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [
-                              Colors.black.withOpacity(0.7),
-                              Colors.black.withOpacity(0.6),
-                              Colors.transparent,
-                            ],
+                            colors: [Color(0xFF00458D), Colors.black],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           ),
@@ -62,36 +52,23 @@ class SplashScreen extends GetWidget<SplashController> {
             ),
           ),
           Positioned(
-            bottom: 100,
+            bottom: 80,
             left: 20,
             right: 20,
+            top: 40,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Obx(() => Text(
-                      controller.titles[controller.currentIndex.value],
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    )),
-                const SizedBox(height: 8),
-                Obx(() => Text(
-                      controller.subtitle[controller.currentIndex.value],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.white70,
-                      ),
-                      textAlign: TextAlign.start,
-                    )),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Obx(
                       () => controller.currentIndex.value ==
                               controller.images.length - 1
-                          ? const SizedBox.shrink()
+                          ? const SizedBox(
+                              height: 40,
+                            )
                           : TextButton(
                               onPressed: controller.skipToSignIn,
                               child: Text(
@@ -100,55 +77,57 @@ class SplashScreen extends GetWidget<SplashController> {
                               ),
                             ),
                     ),
-                    Obx(
-                      () => controller.currentIndex.value ==
-                              controller.images.length - 1
-                          ? TextButton(
-                              onPressed: controller.nextSlide,
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Enter".tr,
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                  const Icon(
-                                    Icons.arrow_forward,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                            )
-                          : TextButton(
-                              onPressed: controller.nextSlide,
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Next".tr,
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                  const Icon(
-                                    Icons.arrow_forward,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                            ),
+                  ],
+                ),
+                // CommonNetworkImageView(
+                //   url: ImageConstants.quillai,
+                //   height: scale.getScaledHeight(40),
+                //   width: scale.getScaledHeight(82),
+                // ),
+                Center(
+                  child: Container(
+                    height: 28,
+                    width: 85,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(36),
+                        color: const Color(0xFF3f86bd)),
+                    child: const Center(
+                      child: Text(
+                        'Asset 2',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
                     ),
-                    // TextButton(
-                    //   onPressed: controller.nextSlide,
-                    //   child: const Row(
-                    //     children: [
-                    //       Text(
-                    //         "Enter",
-                    //         style: TextStyle(color: Colors.white),
-                    //       ),
-                    //       Icon(
-                    //         Icons.arrow_forward,
-                    //         color: Colors.white,
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Obx(() => Text(
+                          controller.titles[controller.currentIndex.value],
+                          style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        )),
+                    const SizedBox(height: 30),
+                    Center(
+                      child: Obx(() => Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                child: Text(
+                                  controller
+                                      .subtitle[controller.currentIndex.value],
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white70,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                ),
+                              ),
+                            ],
+                          )),
+                    ),
                   ],
                 ),
                 Row(
@@ -156,18 +135,37 @@ class SplashScreen extends GetWidget<SplashController> {
                   children: List.generate(
                     controller.images.length,
                     (index) => Obx(() => Container(
-                          margin: const EdgeInsets.all(4),
-                          width: 10,
-                          height: 10,
+                          width: 57,
+                          height: 4,
+                          margin: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             color: controller.currentIndex.value == index
                                 ? Colors.white
-                                : Colors.grey,
-                            shape: BoxShape.circle,
+                                : Colors.grey.shade700,
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         )),
                   ),
                 ),
+                Center(
+                  child: GestureDetector(
+                    onTap: controller.nextSlide,
+                    child: Container(
+                      height: 53,
+                      width: 300,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(36),
+                          color: const Color(0xFF3f86bd)),
+                      child: const Center(
+                        child: Text(
+                          'Get Started',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

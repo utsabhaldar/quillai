@@ -38,10 +38,25 @@ class SignUpScreen extends GetWidget<SignUpController> {
           Column(
             children: [
               SizedBox(height: scale.getScaledHeight(100)),
-              CommonNetworkImageView(
-                url: ImageConstants.quillai,
-                height: scale.getScaledHeight(40),
-                width: scale.getScaledHeight(82),
+              // CommonNetworkImageView(
+              //   url: ImageConstants.quillai,
+              //   height: scale.getScaledHeight(40),
+              //   width: scale.getScaledHeight(82),
+              // ),
+              Center(
+                child: Container(
+                  height: 28,
+                  width: 85,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(36),
+                      color: const Color(0xFF3f86bd)),
+                  child: const Center(
+                    child: Text(
+                      'Image 2',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
               SizedBox(height: scale.getScaledHeight(30)),
               Text(
@@ -85,110 +100,8 @@ class SignUpScreen extends GetWidget<SignUpController> {
                         DividerWithText(text: 'OR'.tr),
                         SizedBox(height: scale.getScaledHeight(20)),
                         CustomTextField(
-                          hintText: 'UserName / ID'.tr,
-                          onChanged: (value) =>
-                              controller.username.value = value,
-                        ),
-                        SizedBox(height: scale.getScaledHeight(10)),
-                        CustomTextField(
                           hintText: 'Email'.tr,
                           onChanged: (value) => controller.email.value = value,
-                        ),
-                        SizedBox(height: scale.getScaledHeight(10)),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: scale.getScaledWidth(110),
-                              child: CustomTextField(
-                                hintText: "Code".tr,
-                                content: Obx(() {
-                                  return CountryCodePicker(
-                                    closeIcon: const Icon(
-                                      Icons.close,
-                                      color: Colors.white,
-                                    ),
-                                    showCountryOnly: true,
-                                    textStyle:
-                                        const TextStyle(color: Colors.white),
-                                    dialogBackgroundColor: ColorConstant.color1,
-                                    dialogTextStyle:
-                                        const TextStyle(color: Colors.white),
-                                    searchStyle:
-                                        const TextStyle(color: Colors.white),
-                                    searchDecoration: InputDecoration(
-                                      suffixIconColor: Colors.white,
-                                      iconColor: Colors.white,
-                                      hintText: "Search".tr,
-                                    ),
-                                    initialSelection:
-                                        controller.initialCountryCode.value,
-                                  );
-                                }),
-                              ),
-                            ),
-                            SizedBox(width: scale.getScaledWidth(10)),
-                            Flexible(
-                              child: CustomTextField(
-                                hintText: 'Phone'.tr,
-                                onChanged: (value) =>
-                                    controller.phoneNumber.value = value,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: scale.getScaledHeight(10)),
-                        CustomTextField(
-                          hintText: 'Languages'.tr,
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: scale.getScaledWidth(20),
-                              ),
-                              SizedBox(
-                                width: scale.getScaledWidth(100),
-                                child: DropdownButtonFormField<String>(
-                                  value: controller.selectedLanguage.value,
-                                  decoration: InputDecoration(
-                                    filled: true,
-                                    fillColor: Colors.transparent,
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                  ),
-                                  dropdownColor: ColorConstant.color1,
-                                  style: const TextStyle(color: Colors.white54),
-                                  items: [
-                                    'English',
-                                    'Arabic'.tr,
-                                  ].map((language) {
-                                    return DropdownMenuItem(
-                                      value: language,
-                                      child: Text(language),
-                                    );
-                                  }).toList(),
-                                  onChanged: (value) {
-                                    controller.selectedLanguage.value = value!;
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
                         SizedBox(height: scale.getScaledHeight(10)),
                         CustomTextField(

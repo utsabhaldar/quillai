@@ -5,10 +5,6 @@ class AppTheme {
     fontFamily: 'Lufga',
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
-    textSelectionTheme: TextSelectionThemeData(
-        // cursorColor: ColorConstant.fontColor,
-        // selectionColor: ColorConstant.fontColor,
-        // selectionHandleColor: ColorConstant.fontColor
-        ),
+    textSelectionTheme: const TextSelectionThemeData(),
   );
 }

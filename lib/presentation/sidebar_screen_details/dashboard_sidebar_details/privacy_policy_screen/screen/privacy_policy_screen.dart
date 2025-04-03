@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quillai/constants/app_style.dart';
 import 'package:quillai/constants/color_constants.dart';
-import 'package:quillai/constants/image_constants.dart';
 import 'package:quillai/presentation/sidebar_screen_details/dashboard_sidebar_details/privacy_policy_screen/controller/privacy_policy_controller.dart';
 import 'package:quillai/utils/scaling_utility.dart';
 import 'package:quillai/widgets/background_effect.dart';
-import 'package:quillai/widgets/common_network_image.dart';
 import 'package:quillai/widgets/drop_down_text.dart';
 
 class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
@@ -43,10 +41,25 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
                     ],
                   ),
                   SizedBox(height: scale.getScaledHeight(10)),
-                  CommonNetworkImageView(
-                    url: ImageConstants.quillai,
-                    height: scale.getScaledHeight(40),
-                    width: scale.getScaledHeight(82),
+                  // CommonNetworkImageView(
+                  //   url: ImageConstants.quillai,
+                  //   height: scale.getScaledHeight(40),
+                  //   width: scale.getScaledHeight(82),
+                  // ),
+                  Center(
+                    child: Container(
+                      height: 28,
+                      width: 85,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(36),
+                          color: const Color(0xFF3f86bd)),
+                      child: const Center(
+                        child: Text(
+                          'Image 2',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(height: scale.getScaledHeight(30)),
                   Expanded(
@@ -56,7 +69,7 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
                           padding: EdgeInsets.symmetric(
                               horizontal: scale.getScaledHeight(16)),
                           child: Text(
-                            "Privacy Policy for X'orbx Cyber Security".tr,
+                            "Privacy Policy for Quillai".tr,
                             style: AppStyle.style3.copyWith(
                               color: Colors.white,
                               fontSize: scale.getScaledHeight(14),
@@ -68,7 +81,7 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
                           padding: EdgeInsets.symmetric(
                               horizontal: scale.getScaledHeight(16)),
                           child: Text(
-                            "Effective Date: 01/11/2024\nAt X'orbx Cyber Security, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines our practices regarding the collection, use, and disclosure of information that you may provide to us when you visit our website, use our services, or engage with us in any way."
+                            "Effective Date: 01/04/2025\nAt Quillai, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines our practices regarding the collection, use, and disclosure of information that you may provide to us when you visit our website, use our services, or engage with us in any way."
                                 .tr,
                             style: AppStyle.style3.copyWith(
                               color: Colors.white,
@@ -143,7 +156,7 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
                         DropDownText(
                           title: "9. Contact Us".tr,
                           items: [
-                            'If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at:\n\nquillai Cyber Security\n130 King St W, Toronto, ON M5X 2A2,\nCanada\nlegal@quillai.com'
+                            'If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at:\n\nQuillai\nSrinagar, Uttarakhand - 246174\nIndia\nlegal@quillai.com'
                                 .tr
                           ],
                           scale: scale,

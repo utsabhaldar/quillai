@@ -48,7 +48,7 @@ android {
         applicationId "com.example.quillai"
         minSdkVersion 26
         multiDexEnabled true
-        targetSdkVersion 34
+        targetSdkVersion 35
         multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

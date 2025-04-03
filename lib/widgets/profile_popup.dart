@@ -26,7 +26,7 @@ void showPopup(BuildContext context) {
               child: GestureDetector(
                 onTap: () {},
                 child: SizedBox(
-                  width: scale.getScaledHeight(110),
+                  width: scale.getScaledHeight(120),
                   child: ShadowBorderCard(
                     content: Column(
                       mainAxisSize: MainAxisSize.min,

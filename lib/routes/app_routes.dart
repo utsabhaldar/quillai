@@ -5,6 +5,8 @@ import 'package:quillai/presentation/profile/binding/profile_binding.dart';
 import 'package:quillai/presentation/profile/screen/profile_screen.dart';
 import 'package:quillai/presentation/settings/binding/settings_binding.dart';
 import 'package:quillai/presentation/settings/screen/settings_screen.dart';
+import 'package:quillai/presentation/sidebar_screen/dashboard_sidebar_screen/binding/dashboard_sidebar_binding.dart';
+import 'package:quillai/presentation/sidebar_screen/dashboard_sidebar_screen/screen/dashboard_sidebar_screen.dart';
 import 'package:quillai/presentation/sidebar_screen_details/dashboard_sidebar_details/privacy_policy_screen/binding/privacy_policy_binding.dart';
 import 'package:quillai/presentation/sidebar_screen_details/dashboard_sidebar_details/privacy_policy_screen/screen/privacy_policy_screen.dart';
 import 'package:quillai/presentation/sidebar_screen_details/dashboard_sidebar_details/terms_and_conditions/binding/terms_and_conditions_binding.dart';
@@ -19,14 +21,13 @@ import 'package:quillai/presentation/verification_screen/binding/verification_bi
 import 'package:quillai/presentation/verification_screen/screen/verification_screen.dart';
 
 class AppRoutes {
-  // Flow 1
   static const splashScreen = '/splash_screen';
   static const signInScreen = '/sign_in_screen';
   static const signUpScreen = '/sign_up_screen';
   static const verificationScreen = '/verification_screen';
   static const dashboardScreen = '/dashboard_screen';
 
-  // Flow 2
+  static const dashboardSidebarScreen = '/dashboard_sidebar_screen';
   static const privacyPolicyScreen = '/privacy_policy_screen';
   static const termsAndConditionsScreen = '/terms_and_conditions';
   static const multiFactorAuthenticationScreen = '/multi_factor_authentication';
@@ -63,6 +64,11 @@ class AppRoutes {
     ),
 
     // sidebar details screens
+    GetPage(
+      name: dashboardSidebarScreen,
+      page: () => const DashboardSidebarScreen(),
+      bindings: [DashboardSidebarBinding()],
+    ),
     GetPage(
       name: privacyPolicyScreen,
       page: () => const PrivacyPolicyScreen(),

@@ -43,10 +43,25 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                     ],
                   ),
                   SizedBox(height: scale.getScaledHeight(10)),
-                  CommonNetworkImageView(
-                    url: ImageConstants.quillai,
-                    height: scale.getScaledHeight(40),
-                    width: scale.getScaledHeight(82),
+                  // CommonNetworkImageView(
+                  //   url: ImageConstants.quillai,
+                  //   height: scale.getScaledHeight(40),
+                  //   width: scale.getScaledHeight(82),
+                  // ),
+                  Center(
+                    child: Container(
+                      height: 28,
+                      width: 85,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(36),
+                          color: const Color(0xFF3f86bd)),
+                      child: const Center(
+                        child: Text(
+                          'Asset 2',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(height: scale.getScaledHeight(30)),
                   Expanded(
@@ -56,7 +71,7 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                           padding: EdgeInsets.symmetric(
                               horizontal: scale.getScaledHeight(16)),
                           child: Text(
-                            "Terms and Conditions for X'orbx Cyber Security.",
+                            "Terms and Conditions for Quillai",
                             style: AppStyle.style3.copyWith(
                               color: Colors.white,
                               fontSize: scale.getScaledHeight(14),
@@ -68,7 +83,7 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                           padding: EdgeInsets.symmetric(
                               horizontal: scale.getScaledHeight(16)),
                           child: Text(
-                            "Effective Date: 01/11/2024\nWelcome to X'orbx Cyber Security. By accessing or using our services, website, or products (collectively, the \"Services\"), you agree to comply with and be bound by these Terms and Conditions (the \"Terms\"). If you do not agree with these Terms, please do not use our Services.",
+                            "Effective Date: 01/04/2025\nWelcome to Quillai. By accessing or using our services, website, or products (collectively, the \"Services\"), you agree to comply with and be bound by these Terms and Conditions (the \"Terms\"). If you do not agree with these Terms, please do not use our Services.",
                             style: AppStyle.style3.copyWith(
                               color: Colors.white,
                               fontSize: scale.getScaledHeight(14),
@@ -92,14 +107,14 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                         DropDownText(
                           title: "3. Services Provided",
                           items: const [
-                            "X'orbx Cyber Security provides cybersecurity services, including but not limited to threat assessment, security audits, incident response, and related consulting services. Specific services and products may be subject to additional terms and conditions."
+                            "Quillai provides cybersecurity services, including but not limited to threat assessment, security audits, incident response, and related consulting services. Specific services and products may be subject to additional terms and conditions."
                           ],
                           scale: scale,
                         ),
                         DropDownText(
                           title: "4. User Responsibilities",
                           items: const [
-                            "You agree to use the Services only for lawful purposes and in accordance with these Terms. You will not:\n• Use the Services in any manner that violates any applicable federal, state, local, or international law or regulation.\n• Impersonate or attempt to impersonate X'orbx Cyber Security, an employee, another user, or any other person or entity.\n• Transmit any material that is unlawful, fraudulent, defamatory, obscene, or otherwise objectionable.\n• Introduce any viruses, Trojan horses, worms, or other harmful code or malware."
+                            "You agree to use the Services only for lawful purposes and in accordance with these Terms. You will not:\n• Use the Services in any manner that violates any applicable federal, state, local, or international law or regulation.\n• Impersonate or attempt to impersonate Quillai, an employee, another user, or any other person or entity.\n• Transmit any material that is unlawful, fraudulent, defamatory, obscene, or otherwise objectionable.\n• Introduce any viruses, Trojan horses, worms, or other harmful code or malware."
                           ],
                           scale: scale,
                         ),
@@ -120,21 +135,21 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                         DropDownText(
                           title: "7. Intellectual Property Rights",
                           items: const [
-                            "All content, trademarks, and other intellectual property on our website and in our Services are owned by X'orbx Cyber Security or our licensors. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written permission."
+                            "All content, trademarks, and other intellectual property on our website and in our Services are owned by Quillai or our licensors. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written permission."
                           ],
                           scale: scale,
                         ),
                         DropDownText(
                           title: "8. Limitation of Liability",
                           items: const [
-                            "To the fullest extent permitted by law, X'orbx Cyber Security shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:\n• Your access to or use of (or inability to access or use) our Services.\n• Any conduct or content of any third party on the Services.\n• Any content obtained from the Services.\n• Unauthorized access, use, or alteration of your transmissions or content."
+                            "To the fullest extent permitted by law, Quillai shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:\n• Your access to or use of (or inability to access or use) our Services.\n• Any conduct or content of any third party on the Services.\n• Any content obtained from the Services.\n• Unauthorized access, use, or alteration of your transmissions or content."
                           ],
                           scale: scale,
                         ),
                         DropDownText(
                           title: "9. Indemnification",
                           items: const [
-                            'You agree to defend, indemnify, and hold harmless X\'orbx Cyber Security, its affiliates, and their respective officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees) arising out of or in connection with your use of the Services, your violation of these Terms, or your infringement of any intellectual property or other rights of any person or entity.'
+                            'You agree to defend, indemnify, and hold harmless Quillai, its affiliates, and their respective officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees) arising out of or in connection with your use of the Services, your violation of these Terms, or your infringement of any intellectual property or other rights of any person or entity.'
                           ],
                           scale: scale,
                         ),
@@ -155,14 +170,14 @@ class TermsAndConditionsScreen extends GetWidget<TermsAndConditionsController> {
                         DropDownText(
                           title: "12. Entire Agreement",
                           items: const [
-                            'These Terms constitute the entire agreement between you and X\'orbx Cyber Security regarding your use of the Services and supersede any prior agreements between you and X\'orbx Cyber Security.'
+                            'These Terms constitute the entire agreement between you and Quillai regarding your use of the Services and supersede any prior agreements between you and Quillai.'
                           ],
                           scale: scale,
                         ),
                         DropDownText(
                           title: "13. Contact Information",
                           items: const [
-                            'If you have any questions about these Terms, please contact us at:\n\nX\'orbx Cyber Security\nLegal@quillai.con\n130 King St W, Toronto, ON M5X 2A2, Canada'
+                            'If you have any questions about these Terms, please contact us at:\n\nQuillai\nLegal@quillai.con\nSrinagar, Uttarakhand - 246174\nIndia'
                           ],
                           scale: scale,
                         ),

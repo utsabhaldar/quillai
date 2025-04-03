@@ -1,8 +1,6 @@
 import 'package:email_auth/email_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:quillai/firebase_auth/firebase_auth_service.dart';
 import 'package:quillai/routes/app_routes.dart';
@@ -11,7 +9,6 @@ class SignInController extends GetxController {
   var email = ''.obs;
   var password = ''.obs;
   var rememberMe = false.obs;
-  var initialCountryCode = 'US'.obs;
 
   void toggleRememberMe() {
     rememberMe.value = !rememberMe.value;
@@ -47,7 +44,7 @@ class SignInController extends GetxController {
     try {
       UserCredential? user = await _auth.loginWithGoogle();
       Get.toNamed(
-        AppRoutes.multiFactorAuthenticationScreen,
+        AppRoutes.dashboardScreen,
       );
       if (user != null) {
         print("Logged in as ${user.user?.displayName}");
@@ -66,7 +63,7 @@ class SignInController extends GetxController {
     try {
       UserCredential? user = await _auth.loginWithApple();
       Get.toNamed(
-        AppRoutes.multiFactorAuthenticationScreen,
+        AppRoutes.dashboardScreen,
       );
       if (user != null) {
         print("Logged in as ${user.user?.displayName}");
@@ -93,7 +90,7 @@ class SignInController extends GetxController {
 
         User? currentUser = FirebaseAuth.instance.currentUser;
         currentUser != null
-            ? Get.toNamed(AppRoutes.multiFactorAuthenticationScreen)
+            ? Get.toNamed(AppRoutes.dashboardScreen)
             : Get.toNamed(AppRoutes.signInScreen);
 
         if (user != null) {

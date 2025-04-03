@@ -37,10 +37,6 @@ class FirebaseAuthService {
   Future<User?> signUpWithEmailAndPassword(
     String email,
     String password,
-    String username,
-    String phoneNumber,
-    String selectedCountryCode,
-    String selectedLanguage,
     String confirmPassword,
     bool rememberMe,
   ) async {

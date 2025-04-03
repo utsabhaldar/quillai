@@ -37,10 +37,25 @@ class SignInScreen extends GetWidget<SignInController> {
           Column(
             children: [
               SizedBox(height: scale.getScaledHeight(100)),
-              CommonNetworkImageView(
-                url: ImageConstants.quillai,
-                height: scale.getScaledHeight(40),
-                width: scale.getScaledHeight(82),
+              // CommonNetworkImageView(
+              //   url: ImageConstants.quillai,
+              //   height: scale.getScaledHeight(40),
+              //   width: scale.getScaledHeight(82),
+              // ),
+              Center(
+                child: Container(
+                  height: 28,
+                  width: 85,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(36),
+                      color: const Color(0xFF3f86bd)),
+                  child: const Center(
+                    child: Text(
+                      'Image 3',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
               SizedBox(height: scale.getScaledHeight(30)),
               Text(
@@ -166,7 +181,7 @@ class SignInScreen extends GetWidget<SignInController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Don't have an account?  | ".tr,
+                              "Don't have an account?  |  ".tr,
                               style: AppStyle.style2.copyWith(
                                 fontSize: scale.getScaledHeight(12),
                                 fontWeight: FontWeight.normal,
@@ -178,8 +193,6 @@ class SignInScreen extends GetWidget<SignInController> {
                                 Get.toNamed(
                                   AppRoutes.signUpScreen,
                                 );
-                                controller.initialCountryCode.value =
-                                    controller.toString();
                               },
                               child: Text(
                                 "Sign Up".tr,
